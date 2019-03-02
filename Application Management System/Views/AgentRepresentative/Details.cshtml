@@ -1,0 +1,28 @@
+﻿@model Application_Management_System.Models.AgentRepresentative
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Agent Representative Details";
+}
+
+<h2>Details</h2>
+<hr />
+
+<dl class="dl-horizontal">
+    <dt>@Html.DisplayNameFor(model=>model.AgentRepresentativeID)</dt>
+    <dd>@Html.DisplayFor(model=>model.AgentRepresentativeID)</dd>
+
+    <dt>@Html.DisplayNameFor(model=>model.FirstMidName)</dt>
+    <dd>@Html.DisplayFor(model=>model.FirstMidName)</dd>
+
+    <dt>@Html.DisplayNameFor(model=>model.LastName)</dt>
+    <dd>@Html.DisplayFor(model=>model.LastName)</dd>
+
+    <dt>@Html.DisplayNameFor(model=>model.ContactNumber)</dt>
+    <dd>@Html.DisplayFor(model=>model.ContactNumber)</dd>
+
+    <dt>@Html.DisplayNameFor(model=>model.EmailAddress)</dt>
+    <dd>@Html.DisplayFor(model=>model.EmailAddress)</dd>
+</dl>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
