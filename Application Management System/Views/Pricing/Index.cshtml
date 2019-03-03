@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Application_Management_System.Models.Pricing>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<hr />
+
+<div>
+    @Html.ActionLink("Create New", "Create")
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model=>model.PricingID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.VetNationalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TuitionFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PricingComment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem=>item.PricingID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.VetNationalCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TuitionFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaterialFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PricingComment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PricingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PricingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PricingID })
+        </td>
+    </tr>
+}
+
+</table>

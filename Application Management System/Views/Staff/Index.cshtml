@@ -1,0 +1,57 @@
+﻿@model PagedList.IPagedList<Application_Management_System.Models.Staff>
+@using PagedList.Mvc;
+
+<link rel="stylesheet" type="text/css" href="~/Content/PagedList.css" />
+@{
+    ViewBag.Title = "Staff List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Marketing & Sales Staff List</h2>
+<hr />
+
+<div>
+    @Html.ActionLink("Create New", "Create")
+</div>
+
+@using (Html.BeginForm("Index", "Staff", FormMethod.Get))
+{
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.TextBox("SearchString",ViewBag.CurrentFilter as string, new { @class="form-control"})&nbsp;
+            <input type="submit" value="Search" class="btn btn-default" />
+        </div>
+    </div>
+}
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Staff ID", "Index", new { sortOrder=ViewBag.IdSortParam,currentFilter=ViewBag.CurrentFilter})
+        </th>
+        <th>
+            @Html.ActionLink("Staff Name", "Index", new { sortOrder=ViewBag.NameSortParam,currentFilter=ViewBag.CurrentFilter})
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StaffID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.StaffID }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.StaffID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.StaffID })
+        </td>
+    </tr>
+}
+</table>
+
+Page @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model,page=>Url.Action("Index",
+    new { page,sortOrder=ViewBag.CurrentSortOrder, currentFilter=ViewBag.CurrentSortFilter}))

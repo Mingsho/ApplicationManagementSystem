@@ -15,22 +15,22 @@ namespace Application_Management_System.Models
 
         [Required(ErrorMessage ="*This field is required!")]
         [StringLength(60,ErrorMessage ="*Field length exceeded!")]
-        [Display(Name ="First Name")]
+        [Display(Name ="First Name:")]
         public string FirstMidName { get; set; }
 
         [StringLength(60,ErrorMessage ="*Field length exceeded!")]
-        [Display(Name ="Last Name")]
+        [Display(Name ="Last Name:")]
         public string LastName { get; set; }
 
         [StringLength(20,ErrorMessage ="*Field length exceeded!")]
-        [Display(Name ="Contact Number")]
+        [Display(Name ="Contact Number:")]
         public string ContactNumber { get; set; }
 
         [DataType(DataType.EmailAddress)]
-        [Display(Name ="Email Address")]
+        [Display(Name ="Email Address:")]
         public string EmailAddress { get; set; }
 
-        [Display(Name ="Full Name")]
+        [Display(Name ="Agent Rep Name:")]
         public string FullName
         {
             get

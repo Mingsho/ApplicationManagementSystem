@@ -1,0 +1,67 @@
+﻿@model Application_Management_System.Models.Pricing
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pricing</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.VetNationalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.VetNationalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TuitionFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TuitionFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PricingComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricingComment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PricingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

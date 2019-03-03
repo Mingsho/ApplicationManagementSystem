@@ -1,4 +1,8 @@
-﻿@model IEnumerable<Application_Management_System.Models.AgentRepresentative>
+﻿@model PagedList.IPagedList<Application_Management_System.Models.AgentRepresentative>
+@using PagedList.Mvc;
+
+<link type="text/css" href="~/Content/PagedList.css" rel="stylesheet"/>
+
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Agent Representatives";
@@ -7,12 +11,22 @@
 <h1>Agent Representatives</h1>
 <hr />
 <div>
-    @Html.ActionLink("Add New","Create")
+    @Html.ActionLink("Add New", "Create")
 </div>
+@using (Html.BeginForm("Index", "AgentRepresentative", FormMethod.Get))
+{
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control col-md-5" })&nbsp;
+            <input type="submit" value="Search" class="btn btn-default" />
+        </div>
+    </div>
+    <br />
+}
 <table class="table">
     <tr>
-        <th>ID</th>
-        <th>Representative Name</th>
+        <th>@Html.ActionLink("Representative ID","Index",new { sortOrder=ViewBag.IdSortParam, currentFilter=ViewBag.CurrentFilter})</th>
+        <th>@Html.ActionLink("Representative Name","Index",new { sortOrder=ViewBag.NameSortParam,currentFilter=ViewBag.CurrentFilter})</th>
         <th>Contact Number</th>
         <th>Email Address</th>
         <th></th>
@@ -20,14 +34,23 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@Html.DisplayFor(modelItem=>item.AgentRepresentativeID)</td>
-            <td>@Html.DisplayFor(modelItem=>item.FullName)</td>
-            <td>@Html.DisplayFor(modelItem=>item.ContactNumber)</td>
-            <td>@Html.DisplayFor(modelItem=>item.EmailAddress)</td>
+            <td>@Html.DisplayFor(modelItem => item.AgentRepresentativeID)</td>
+            <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+            <td>@Html.DisplayFor(modelItem => item.ContactNumber)</td>
+            <td>@Html.DisplayFor(modelItem => item.EmailAddress)</td>
 
-            <td>@Html.ActionLink("Details","Details",new { Id=item.AgentRepresentativeID})|
-                @Html.ActionLink("Edit","Edit",new { Id=item.AgentRepresentativeID})
-            </td>
-        </tr>
+            <td>
+                @Html.ActionLink("Details", "Details", new { Id = item.AgentRepresentativeID }) |
+            @Html.ActionLink("Edit", "Edit", new { Id = item.AgentRepresentativeID }) |
+            @Html.ActionLink("Delete", "Delete", new { Id = item.AgentRepresentativeID })
+        </td>
+    </tr>
     }
 </table>
+<br />
+
+Page @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model,page=>Url.Action("Index", 
+    new { page,sortOrder=ViewBag.CurrentSort,currentFilter=ViewBag.CurrentFilter }))
+

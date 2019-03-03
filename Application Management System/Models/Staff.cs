@@ -15,13 +15,13 @@ namespace Application_Management_System.Models
 
         [Required(ErrorMessage ="*This field is required!")]
         [StringLength(60,ErrorMessage ="*Field length exceeded!")]
-        [Display(Name ="First Name")]
+        [Display(Name ="First Name:")]
         public string FirstMidName { get; set; }
 
-        [Display(Name ="Last Name")]
+        [Display(Name ="Last Name:")]
         public string LastName { get; set; }
 
-        [Display(Name ="Full Name")]
+        [Display(Name ="Staff Rep Name:")]
         public string FullName
         {
             get

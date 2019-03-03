@@ -1,0 +1,127 @@
+﻿@model Application_Management_System.Models.Agent
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Agent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>@Html.DisplayNameFor(model=>model.AgentID)</dt>
+        <dd>@Html.DisplayFor(model=>model.AgentID)</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgentRepresentative.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgentRepresentative.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Staff.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Staff.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LegalName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LegalName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TradingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TradingName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactPerson)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactPerson)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgentApplicationForm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgentApplicationForm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyRegistration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyRegistration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Agreement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agreement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgreementSignedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgreementSignedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyProfile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyProfile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportedToAsqa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportedToAsqa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AgentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

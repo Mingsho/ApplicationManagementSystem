@@ -1,0 +1,99 @@
+﻿@model PagedList.IPagedList<Application_Management_System.Models.Agent>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Agent List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Agent List</h2>
+<hr />
+
+<div>
+    @Html.ActionLink("Create New", "Create")
+</div>
+
+@using (Html.BeginForm("Index", "Agent", FormMethod.Get))
+{
+    <div class="col-md-10">
+        @Html.TextBox("SearchString",ViewBag.CurrentFilter as string, new { @class="form-control col-md-5"})&nbsp;
+        <input type="submit" value="Search" class="btn btn-default" />
+    </div>
+}
+<br />
+<table class="table">
+    <tr>
+       <th>
+           @Html.ActionLink("Agent ID", "Index", new { sortOrder=ViewBag.IdSortParam,currentFilter=ViewBag.CurrentFilter})
+       </th>
+        <th>
+            @Html.ActionLink("Legal Name", "Index", new { sortOrder=ViewBag.Name1SortParam,currentFilter=ViewBag.CurrentFilter})
+        </th>
+        <th>
+            Trading Name
+        </th>
+        <th>
+            Email Address
+        </th>
+        <th>
+            Contact Number
+        </th>
+        <th>
+            @Html.ActionLink("Contact Person", "Index", new { sortOrder=ViewBag.Name2SortParam,currentFilter=ViewBag.CurrentFilter})
+        </th>
+        
+        <th>
+            Signed Agreement
+        </th>
+        <th>
+            @Html.ActionLink("Agreement Signed Date", "Index", new { sortOrder=ViewBag.DateSortParam,currentFilter=ViewBag.CurrentFilter})
+        </th>
+      
+        <th>
+            Reported to ASQA
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem=>item.AgentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LegalName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TradingName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactPerson)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agreement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgreementSignedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportedToAsqa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AgentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AgentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AgentID })
+        </td>
+    </tr>
+}
+
+</table>
+
+Page @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model,page=>Url.Action("Index",
+    new { page,sortOrder=ViewBag.CurrentSortOrder,currentFilter=ViewBag.CurrentFilter}))

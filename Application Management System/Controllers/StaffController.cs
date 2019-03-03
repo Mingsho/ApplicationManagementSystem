@@ -6,22 +6,25 @@ using System.Web.Mvc;
 using System.Net;
 using System.Data.Entity;
 using PagedList;
-using Application_Management_System.DAL;
 using Application_Management_System.Models;
-
+using Application_Management_System.DAL;
 
 namespace Application_Management_System.Controllers
 {
-    public class AgentRepresentativeController: Controller
+    public class StaffController: Controller
     {
         private AmsContext db = new AmsContext();
 
-        //Index with sorting, searching and paging
-        public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
+        //public ActionResult Index()
+        //{
+        //    return View(db.Staffs.ToList());
+        //}
+
+        public ViewResult Index(string sortOrder, string currentFilter,string searchString, int? page)
         {
             ViewBag.CurrentSortOrder = sortOrder;
             ViewBag.NameSortParam = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.IdSortParam = sortOrder == "agentRepID" ? "id_desc" : "agentRepID";
+            ViewBag.IdSortParam = sortOrder == "staffID" ? "id_desc" : "staffID";
 
             if (searchString != null)
             {
@@ -34,39 +37,36 @@ namespace Application_Management_System.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
-            var agentRep = from a in db.AgentRepresentatives
-                           select a;
+            var staffRep = from s in db.Staffs
+                           select s;
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                agentRep = agentRep.Where(a => a.FirstMidName.Contains(searchString)
-                || a.LastName.Contains(searchString));
+                staffRep = staffRep.Where(s => s.FirstMidName.Contains(searchString)
+                  || s.LastName.Contains(searchString));
             }
 
             switch (sortOrder)
             {
                 case "name_desc":
-                    agentRep = agentRep.OrderByDescending(a => a.FirstMidName);
+                    staffRep = staffRep.OrderByDescending(s => s.FirstMidName);
                     break;
-
-                case "agentRepID":
-                    agentRep = agentRep.OrderBy(a => a.AgentRepresentativeID);
+                case "staffID":
+                    staffRep = staffRep.OrderByDescending(s => s.StaffID);
                     break;
-
                 case "id_desc":
-                    agentRep = agentRep.OrderByDescending(a => a.AgentRepresentativeID);
+                    staffRep = staffRep.OrderBy(s => s.StaffID);
+                    break;
+                default:
+                    staffRep = staffRep.OrderBy(s => s.FirstMidName);
                     break;
 
-                default:
-                    agentRep = agentRep.OrderBy(a => a.FirstMidName);
-                    break;
             }
 
             int pageSize = 3;
             int pageNumber = page ?? 1;
 
-            return View(agentRep.ToPagedList(pageNumber, pageSize));
-
+            return View(staffRep.ToPagedList(pageNumber, pageSize));
         }
 
         public ActionResult Details(int? Id)
@@ -75,12 +75,14 @@ namespace Application_Management_System.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AgentRepresentative agentRepresentative = db.AgentRepresentatives.Find(Id);
-            if (agentRepresentative == null)
+            Staff staff = db.Staffs.Find(Id);
+
+            if (staff == null)
             {
                 return HttpNotFound();
             }
-            return View(agentRepresentative);
+
+            return View(staff);
         }
 
         //GET
@@ -92,16 +94,16 @@ namespace Application_Management_System.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include ="FirstMidName,LastName,ContactNumber,EmailAddress,FullName")]AgentRepresentative agentRepresentative)
+        public ActionResult Create([Bind(Include ="StaffID,FirstMidname,LastName")]Staff staff)
         {
             if (ModelState.IsValid)
             {
-                db.AgentRepresentatives.Add(agentRepresentative);
+                db.Staffs.Add(staff);
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
-            return View(agentRepresentative);
+            return View(staff);
         }
 
         //GET
@@ -111,26 +113,29 @@ namespace Application_Management_System.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AgentRepresentative agentRepresentative = db.AgentRepresentatives.Find(Id);
-            if (agentRepresentative == null)
+            Staff staff = db.Staffs.Find(Id);
+
+            if (staff == null)
             {
                 return HttpNotFound();
             }
-            return View(agentRepresentative);
+
+            return View(staff);
         }
 
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include ="AgentRepresentativeID,FirstMidName,LastName,ContactNumber,EmailAddress")]AgentRepresentative agentRepresentative)
+        public ActionResult Edit([Bind(Include = "StaffID,FirstMidName,LastName")]Staff staff)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(agentRepresentative).State = EntityState.Modified;
+                db.Entry(staff).State = EntityState.Modified;
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
-            return View(agentRepresentative);
+            return View(staff);
         }
 
         //GET
@@ -141,28 +146,26 @@ namespace Application_Management_System.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            AgentRepresentative agentRepresentative = db.AgentRepresentatives.Find(Id);
+            Staff staff = db.Staffs.Find(Id);
 
-            if (agentRepresentative == null)
+            if (staff == null)
             {
                 return HttpNotFound();
             }
 
-            return View(agentRepresentative);
+            return View(staff);
         }
 
         //POST
-        [HttpPost, ActionName("Delete")]
+        [HttpPost,ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirm(int Id)
         {
-            
-            AgentRepresentative agentRepresentative = db.AgentRepresentatives.Find(Id);
-            db.AgentRepresentatives.Remove(agentRepresentative);
+            Staff staff = db.Staffs.Find(Id);
+            db.Staffs.Remove(staff);
             db.SaveChanges();
 
             return RedirectToAction("Index");
-            
         }
     }
 }
