@@ -43,10 +43,8 @@ namespace Application_Management_System.Controllers
                 viewModel.Applications = viewModel.Applicants.Where(
                     a => a.ApplicantID == Id.Value).Single().Applications;
 
-                //viewModel.Course = viewModel.Applications.Where(
-                //    a => a.ApplicantID == Id.Value).Single().Course;
-
-
+                viewModel.Course = viewModel.Applications.Where(
+                    a => a.ApplicantID == Id.Value).Single().Course;
             }
             
 

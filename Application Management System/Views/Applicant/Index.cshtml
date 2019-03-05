@@ -29,7 +29,15 @@
 
     @foreach (var item in Model.Applicants)
     {
-        <tr>
+        string strSelectedRow = "";
+
+        if (item.ApplicantID == ViewBag.ApplicantID)
+        {
+            strSelectedRow = "success";
+        }
+
+        <tr class="@strSelectedRow">
+
             <td>
                 @Html.DisplayFor(modelItem => item.ApplicantID)
             </td>
@@ -52,38 +60,29 @@
 
 @if (Model.Applications != null)
 {
+    <h2>Applications for selected applicant</h2>
+    <hr />
     <table class="table">
         <tr>
-            <th>Application ID</th>
-            <th>Course ID</th>
+            
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Proposed Start Date</th>
+            <th>Proposed End Date</th>
         </tr>
         @foreach (var item in Model.Applications)
         {
             <tr>
-                <td>@Html.DisplayFor(modelItem => item.ApplicationID)</td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.ApplicantID)</td>
+                          
+                <td>@Html.DisplayFor(modelItem=>item.Course.VetNationalCode)</td>
+           
+                <td>@Html.DisplayFor(modelItem=>item.Course.CourseName)</td>
+           
+                <td>@Html.DisplayFor(modelItem=>item.ProposedStartDate)</td>
+          
+                <td>@Html.DisplayFor(modelItem=>item.ProposedEndDate)</td>
             </tr>
         }
+
     </table>
 }
-
-@*@if (Model.Courses != null)
-        {
-        <table class="table">
-            <tr>
-                <th>Course ID</th>
-                <th>Course Name</th>
-            </tr>
-            @foreach(var item in Model.Courses)
-            {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem=>item.CourseID)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayFor(modelItem=>item.CourseName)</td>
-                </tr>
-            }
-        </table>
-    }*@

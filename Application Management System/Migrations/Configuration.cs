@@ -16,10 +16,10 @@ namespace Application_Management_System.Migrations
 
         protected override void Seed(Application_Management_System.DAL.AmsContext context)
         {
-            if (System.Diagnostics.Debugger.IsAttached == false)
-            {
-                System.Diagnostics.Debugger.Launch();
-            }
+            //if (System.Diagnostics.Debugger.IsAttached == false)
+            //{
+            //    System.Diagnostics.Debugger.Launch();
+            //}
 
             context.AgentRepresentatives.AddOrUpdate(a => new { a.FirstMidName, a.LastName },
                 new AgentRepresentative()

@@ -194,8 +194,8 @@ namespace Application_Management_System.Models
         public string CoeComment { get; set; }
         #endregion
 
-        //public virtual Applicant Applicant { get; set; }
+        public virtual Applicant Applicant { get; set; }
 
-        //public virtual Course Course { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

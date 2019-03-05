@@ -182,6 +182,10 @@
     <Compile Include="Migrations\201903050955441_ApplicationModelChange.Designer.cs">
       <DependentUpon>201903050955441_ApplicationModelChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903051032466_4.cs" />
+    <Compile Include="Migrations\201903051032466_4.Designer.cs">
+      <DependentUpon>201903051032466_4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agent.cs" />
     <Compile Include="Models\AgentRepresentative.cs" />
@@ -298,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903050955441_ApplicationModelChange.resx">
       <DependentUpon>201903050955441_ApplicationModelChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903051032466_4.resx">
+      <DependentUpon>201903051032466_4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
