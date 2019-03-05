@@ -48,5 +48,7 @@ namespace Application_Management_System.Models
             }
         }
 
+        public virtual ICollection<Application> Applications { get; set; }
+
     }
 }

@@ -34,5 +34,6 @@ namespace Application_Management_System.Models
         }
 
         public virtual ICollection<Pricing> Pricing { get; set; }
+        public virtual ICollection<Application> Applications { get; set; }
     }
 }

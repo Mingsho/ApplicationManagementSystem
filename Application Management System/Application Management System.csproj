@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AgentController.cs" />
     <Compile Include="Controllers\AgentRepresentativeController.cs" />
+    <Compile Include="Controllers\ApplicantController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PricingController.cs" />
@@ -172,6 +173,14 @@
     <Compile Include="Migrations\201903021055233_initial.cs" />
     <Compile Include="Migrations\201903021055233_initial.Designer.cs">
       <DependentUpon>201903021055233_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903040836330_minorChanges.cs" />
+    <Compile Include="Migrations\201903040836330_minorChanges.Designer.cs">
+      <DependentUpon>201903040836330_minorChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903050955441_ApplicationModelChange.cs" />
+    <Compile Include="Migrations\201903050955441_ApplicationModelChange.Designer.cs">
+      <DependentUpon>201903050955441_ApplicationModelChange.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agent.cs" />
@@ -187,6 +196,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\ApplicantIndexData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -257,10 +267,14 @@
     <Content Include="Views\Pricing\Details.cshtml" />
     <Content Include="Views\Pricing\Edit.cshtml" />
     <Content Include="Views\Pricing\Index.cshtml" />
+    <Content Include="Views\Applicant\Create.cshtml" />
+    <Content Include="Views\Applicant\Delete.cshtml" />
+    <Content Include="Views\Applicant\Details.cshtml" />
+    <Content Include="Views\Applicant\Edit.cshtml" />
+    <Content Include="Views\Applicant\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -278,6 +292,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903021055233_initial.resx">
       <DependentUpon>201903021055233_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903040836330_minorChanges.resx">
+      <DependentUpon>201903040836330_minorChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903050955441_ApplicationModelChange.resx">
+      <DependentUpon>201903050955441_ApplicationModelChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,89 @@
+﻿@model Application_Management_System.ViewModels.ApplicantIndexData
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Applicant ID
+        </th>
+        <th>
+            Secondary ID
+        </th>
+        <th>
+            Full Name
+        </th>
+        <th>
+            Date of Birth
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Applicants)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicantID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondaryID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.ActionLink("Select", "Index", new { Id = item.ApplicantID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@if (Model.Applications != null)
+{
+    <table class="table">
+        <tr>
+            <th>Application ID</th>
+            <th>Course ID</th>
+        </tr>
+        @foreach (var item in Model.Applications)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ApplicationID)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ApplicantID)</td>
+            </tr>
+        }
+    </table>
+}
+
+@*@if (Model.Courses != null)
+        {
+        <table class="table">
+            <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
+            </tr>
+            @foreach(var item in Model.Courses)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem=>item.CourseID)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayFor(modelItem=>item.CourseName)</td>
+                </tr>
+            }
+        </table>
+    }*@
