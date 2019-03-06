@@ -144,6 +144,7 @@ namespace Application_Management_System.Controllers
             return View(agent);
         }
 
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include ="AgentID,LegalName,TradingName,EmailAddress,ContactNumber," +

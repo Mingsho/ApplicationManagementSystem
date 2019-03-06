@@ -16,12 +16,6 @@ namespace Application_Management_System.Controllers
     {
         private AmsContext db = new AmsContext();
 
-        // GET: Applicant
-        //public ActionResult Index()
-        //{
-        //    return View(db.Applicants.ToList());
-        //}
-
         public ActionResult Index(int? Id)
         {
             var viewModel = new ApplicantIndexData
@@ -49,8 +43,6 @@ namespace Application_Management_System.Controllers
             
 
             return View(viewModel);
-
-             
         }
 
         // GET: Applicant/Details/5
@@ -89,6 +81,24 @@ namespace Application_Management_System.Controllers
             }
 
             return View(applicant);
+        }
+
+        private void PopulateCourseDropdown(object strSelectedCourse = null)
+        {
+            var coursesQuery = from c in db.Courses
+                               orderby c.VetNationalCode
+                               select c;
+
+            ViewBag.CourseID = new SelectList(coursesQuery, "CourseID", "CodeCourseName", strSelectedCourse);
+        }
+
+        private void PopulateAgentDropdown(object strselectedAgent = null)
+        {
+            var agentQuery = from a in db.Agents
+                             orderby a.LegalName
+                             select a;
+
+            ViewBag.AgentID = new SelectList(agentQuery, "AgentID", "TradingName", strselectedAgent);
         }
 
         // GET: Applicant/Edit/5
@@ -148,13 +158,9 @@ namespace Application_Management_System.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+      
+        
     }
+
+    
 }

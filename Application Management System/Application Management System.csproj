@@ -162,6 +162,7 @@
     <Compile Include="Controllers\AgentController.cs" />
     <Compile Include="Controllers\AgentRepresentativeController.cs" />
     <Compile Include="Controllers\ApplicantController.cs" />
+    <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PricingController.cs" />
@@ -200,7 +201,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\ApplicationModelBinder.cs" />
     <Compile Include="ViewModels\ApplicantIndexData.cs" />
+    <Compile Include="ViewModels\ApplicationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

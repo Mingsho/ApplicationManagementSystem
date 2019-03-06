@@ -67,6 +67,7 @@
             
             <th>Course Code</th>
             <th>Course Name</th>
+            <th>Application Received Date</th>
             <th>Proposed Start Date</th>
             <th>Proposed End Date</th>
         </tr>
@@ -77,6 +78,8 @@
                 <td>@Html.DisplayFor(modelItem=>item.Course.VetNationalCode)</td>
            
                 <td>@Html.DisplayFor(modelItem=>item.Course.CourseName)</td>
+
+                <td>@Html.DisplayFor(modelItem=>item.ApplicationFormReceivedDate)</td>
            
                 <td>@Html.DisplayFor(modelItem=>item.ProposedStartDate)</td>
           
