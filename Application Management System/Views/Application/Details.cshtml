@@ -1,0 +1,389 @@
+﻿@model Application_Management_System.Models.Application
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Application</h4>
+    <hr />
+    <dl class="dl-horizontal">
+      
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.FirstMidName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.FirstMidName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.VetNationalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.VetNationalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProposedStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProposedStartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProposedEndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProposedEndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LooIssuedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LooIssuedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LooExpiryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LooExpiryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AirportPickup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AirportPickup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Accomodation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Accomodation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oshc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oshc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarketingComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarketingComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepositReceived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepositReceived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepositReceivedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepositReceivedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TuitionFeeReceived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TuitionFeeReceived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialFeeReceived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialFeeReceived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationFeeReceived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationFeeReceived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OshcFeeReceived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OshcFeeReceived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutstandingAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutstandingAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinanceComments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinanceComments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationForm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationForm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationFormReceivedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationFormReceivedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreTrainingReview)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreTrainingReview)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtrCompletedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtrCompletedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcceptanceOfOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcceptanceOfOffer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcceptanceOfOfferDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcceptanceOfOfferDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcademicTranscripts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcademicTranscripts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IeltsOrEquivalent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IeltsOrEquivalent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OshcCurrency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OshcCurrency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinancialViability)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinancialViability)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseOutline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseOutline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GteReviewed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GteReviewed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdministrationComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdministrationComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreEnrolmentInformation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreEnrolmentInformation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnrolledInSms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnrolledInSms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eCoeIssued)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eCoeIssued)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eCoeIssuedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eCoeIssuedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepositMatchingLoo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepositMatchingLoo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatesMatchingLoo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatesMatchingLoo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoeStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoeStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eCoeLastUpdated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eCoeLastUpdated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RefundRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RefundRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RefundAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RefundAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRefundProcessed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRefundProcessed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoeComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoeComment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ApplicationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

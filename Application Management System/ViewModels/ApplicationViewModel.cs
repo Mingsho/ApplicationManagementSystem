@@ -8,7 +8,7 @@ namespace Application_Management_System.ViewModels
 {
     public class ApplicationViewModel
     {
-        public Applicant Applicant { get; set; }
-        public Application Application { get; set; }
+        public IEnumerable<Application> Applications { get; set; }
+        public IEnumerable<Applicant> Applicant { get; set; }
     }
 }

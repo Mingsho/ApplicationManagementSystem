@@ -201,7 +201,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\ApplicationModelBinder.cs" />
     <Compile Include="ViewModels\ApplicantIndexData.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
   </ItemGroup>
@@ -279,9 +278,12 @@
     <Content Include="Views\Applicant\Details.cshtml" />
     <Content Include="Views\Applicant\Edit.cshtml" />
     <Content Include="Views\Applicant\Index.cshtml" />
+    <Content Include="Views\Application\Index.cshtml" />
+    <Content Include="Views\Application\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
