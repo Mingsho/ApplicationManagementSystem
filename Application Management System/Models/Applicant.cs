@@ -22,7 +22,7 @@ namespace Application_Management_System.Models
         [Display(Name ="First Name")]
         public string FirstMidName { get; set; }
 
-        [Display(Name ="Middle Name")]
+        [Display(Name ="Last Name")]
         public string LastName { get; set; }
 
         [DataType(DataType.Date)]

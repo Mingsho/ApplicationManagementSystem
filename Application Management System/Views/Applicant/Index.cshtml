@@ -51,7 +51,8 @@
                 @Html.DisplayFor(modelItem => item.DateOfBirth)
             </td>
             <td>
-                @Html.ActionLink("Select", "Index", new { Id = item.ApplicantID })
+                @Html.ActionLink("Select", "Index", new { Id = item.ApplicantID }) |
+                @Html.ActionLink("Apply", "Create", "Application", new { Id=item.ApplicantID},null)
             </td>
         </tr>
     }

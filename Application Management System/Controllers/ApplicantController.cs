@@ -73,11 +73,20 @@ namespace Application_Management_System.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ApplicantID,SecondaryID,FirstMidName,LastName,DateOfBirth,Country,EmailAddress,ContactNumber")] Applicant applicant)
         {
+            int applicantID = 0;
             if (ModelState.IsValid)
             {
                 db.Applicants.Add(applicant);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                applicantID = applicant.ApplicantID;
+
+                //after the creation of the applicant,
+                //user will be directed to process the application
+                //for the applicant.
+                return RedirectToAction("Create", "Application", new { Id = applicantID });
+
+                //return RedirectToAction("Index");
             }
 
             return View(applicant);
