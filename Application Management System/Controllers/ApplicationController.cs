@@ -64,9 +64,9 @@ namespace Application_Management_System.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include ="ApplicationID,ApplicantID,CourseID,ProposedStartDate,ProposedEndDate,LooIssuedDate,LooExpiryDate,AirportPickup,Accomodation,Oshc,AgentID" +
-            "ApplicationStatus,MarketingComment,DepositReceived,DepositReceivedDate,TuitionFeeReceived,MaterialFeeReceived,ApplicationFeeReceived,OshcFeeReceived,OutstandingAmount" +
-            "FinanceComments,ApplicationForm,ApplicationFormReceivedDate,PreTrainingReview,PtrCompletedDate,AcceptanceOfOffer,AcceptanceOfOfferDate,AcademicTranscripts,Passport" +
+        public ActionResult Create([Bind(Include ="ApplicationID,ApplicantID,CourseID,ProposedStartDate,ProposedEndDate,LooIssuedDate,LooExpiryDate,AirportPickup,Accomodation,Oshc,AgentID," +
+            "ApplicationStatus,MarketingComment,DepositReceived,DepositReceivedDate,TuitionFeeReceived,MaterialFeeReceived,ApplicationFeeReceived,OshcFeeReceived,OutstandingAmount," +
+            "FinanceComments,ApplicationForm,ApplicationFormReceivedDate,PreTrainingReview,PtrCompletedDate,AcceptanceOfOffer,AcceptanceOfOfferDate,AcademicTranscripts,Passport," +
             "IeltsOrEquivalent,OshcCurrency,FiancialViability,CourseOutline,GteReviewed,AdministrationComment,PreEnrolmentInformation,EnrolledInSms,eCoeIssued,eCoeIssuedDate," +
             "DepositMatchingLoo,DatesMatchingLoo,CoeStatus,eCoeLastUpdated,RefundRequired,RefundAmount,DateRefundProcessed,CoeComment")]Application application)
         {

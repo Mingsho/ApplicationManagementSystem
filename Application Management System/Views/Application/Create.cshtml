@@ -22,16 +22,16 @@
             <legend>Qualification Details</legend>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.ApplicantID, "ApplicantID", htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.LabelFor(model => model.ApplicantID, "Applicant ID", htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
                     @*@Html.DropDownList("ApplicantID", null, htmlAttributes: new { @class = "form-control",@disabled="disabled" })
                 @Html.ValidationMessageFor(model => model.ApplicantID, "", new { @class = "text-danger" })*@
-                    @Html.EditorFor(model => model.ApplicantID, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                    @Html.EditorFor(model => model.ApplicantID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.CourseID, "CourseID", htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.LabelFor(model => model.CourseID, "Course Name", htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
                     @Html.DropDownList("CourseID", null, htmlAttributes: new { @class = "form-control" })
 
@@ -80,25 +80,25 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Accomodation, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.Accomodation)
-                    </div>
+                    
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Oshc, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.LabelFor(model => model.Oshc,"OSHC booked by provider", htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.Oshc)
-                    </div>
+                   
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.AgentID, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.LabelFor(model => model.AgentID,"Agent Name", htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    @Html.DropDownList("AgentID", null, new { @class = "form-control" })
+                    @Html.DropDownList("AgentID", null, htmlAttributes: new { @class="form-control"})
                 </div>
             </div>
 
@@ -126,9 +126,9 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.DepositReceived, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.DepositReceived)
-                    </div>
+                    
                 </div>
             </div>
 
@@ -197,9 +197,9 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.ApplicationForm, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                   
                         @Html.CheckBoxFor(model => model.ApplicationForm)
-                    </div>
+                    
                 </div>
             </div>
 
@@ -214,9 +214,9 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.PreTrainingReview, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.PreTrainingReview)
-                    </div>
+                    
                 </div>
             </div>
 
@@ -231,9 +231,9 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.AcceptanceOfOffer, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.AcceptanceOfOffer)
-                    </div>
+                    
                 </div>
             </div>
 
@@ -248,69 +248,69 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.AcademicTranscripts, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.AcademicTranscripts)
-                    </div>
+                    
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.Passport, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.Passport)
-                    </div>
+                    
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.IeltsOrEquivalent, htmlAttributes: new { @class = "control-label col-md-4"})
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.IeltsOrEquivalent)
-                    </div>
+                    
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.OshcCurrency, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.OshcCurrency)
-                    </div>
+                    
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.FinancialViability, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.FinancialViability)
-                    </div>
+                    
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.CourseOutline, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.CourseOutline)
-                    </div>
+                   
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.GteReviewed, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.GteReviewed)
-                    </div>
+                    
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.AdministrationComment, htmlAttributes: new { @class = "control-label col-md-4" })
-                <div class="col-md-10">
+                <div class="col-md-8">
                     @Html.EditorFor(model => model.AdministrationComment, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.AdministrationComment, "", new { @class = "text-danger" })
                 </div>
@@ -318,19 +318,19 @@
 
             <div class="form-group">
                 @Html.LabelFor(model => model.PreEnrolmentInformation, htmlAttributes: new { @class = "control-label col-md-4" })
-                <div class="col-md-10">
-                    <div class="checkbox">
+                <div class="col-md-8">
+                    
                         @Html.CheckBoxFor(model => model.PreEnrolmentInformation)
-                    </div>
+                    
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.EnrolledInSms, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.EnrolledInSms)
-                    </div>
+                    
                 </div>
             </div>
         </fieldset>
@@ -342,9 +342,9 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.eCoeIssued, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.eCoeIssued)
-                    </div>
+                    
                 </div>
             </div>
 
@@ -359,18 +359,18 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.DepositMatchingLoo, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.DepositMatchingLoo)
-                    </div>
+                    
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.DatesMatchingLoo, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.DatesMatchingLoo)
-                    </div>
+                    
                 </div>
             </div>
 
@@ -393,9 +393,9 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.RefundRequired, htmlAttributes: new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    <div class="checkbox">
+                    
                         @Html.CheckBoxFor(model => model.RefundRequired)
-                    </div>
+                    
                 </div>
             </div>
 
@@ -433,9 +433,9 @@
     </div>
 }
 
-@*<div>
+<div>
     @Html.ActionLink("Back to List", "Index")
-</div>*@
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
